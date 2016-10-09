@@ -5,8 +5,14 @@ function App(config) {
     const logger = require('morgan');
     const cookieParser = require('cookie-parser');
     const bodyParser = require('body-parser');
+    const hat = require('hat');
+
+    const stubTodoListModel = require('./models/StubTodoListModel');
+
+    const todoListService = require('./services/TodoListService')(hat);
 
     const indexRoute = require('./routes/IndexRoute')(express);
+    const todoListRoute = require('./routes/TodoListRoute')(express, stubTodoListModel, todoListService);
 
     const app = express();
 
@@ -23,6 +29,7 @@ function App(config) {
     app.use(express.static(path.join(__dirname, 'public')));
 
     app.use('/', indexRoute);
+    app.use('/list', todoListRoute);
 
 // catch 404 and forward to error handler
     app.use(function (req, res, next) {
