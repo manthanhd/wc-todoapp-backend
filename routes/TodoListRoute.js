@@ -19,6 +19,29 @@ function TodoListRoute(express, stubTodoListModel, todoListService) {
         });
     });
 
+    router.get('/', function(req, res) {
+        return todoListService.findAll(function(err, todoLists) {
+            if(err) {
+                console.error(err);
+                return res.status(500).send();
+            }
+
+            return res.send({todoLists: todoLists});
+        });
+    });
+
+    router.get('/id/:todoListId', function(req, res) {
+        var todoListId = req.params.todoListId;
+        return todoListService.findById(todoListId, function(err, todoList) {
+            if(err) {
+                console.error(err);
+                return res.status(500).send();
+            }
+
+            return res.send(todoList);
+        })
+    });
+
     return router;
 }
 
