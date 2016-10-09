@@ -1,15 +1,14 @@
 /**
  * Created by manthanhd on 09/10/2016.
  */
-function TodoListRoute(express, stubTodoListModel, todoListService) {
+function TodoListRoute(express, todoListService) {
     var router = express.Router();
 
     router.post('/', function(req, res) {
         var name = req.body.name;
         var description = req.body.description;
 
-        var todoList = new stubTodoListModel(name, description);
-        return todoListService.save(todoList, function(err, savedTodoList) {
+        return todoListService.save(name, description, function(err, savedTodoList) {
             if(err) {
                 console.error(err);
                 return res.status(500).send();

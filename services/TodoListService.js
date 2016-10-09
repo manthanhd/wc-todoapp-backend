@@ -1,44 +1,40 @@
 /**
  * Created by manthanhd on 09/10/2016.
  */
-function TodoListService(hat) {
-    var todoLists = [];
-    this.save = function SaveTodoList(todoList, callback) {
-        todoList.id = hat();
-        todoLists.push(todoList);
-        console.info(todoLists);
-        return callback(undefined, todoList);
+function TodoListService(todoListModel) {
+    this.save = function SaveTodoList(name, description, callback) {
+        var newTodoList = new todoListModel();
+        newTodoList.name = name;
+        newTodoList.description = description;
+        newTodoList.save(function(err, savedTodoList) {
+            if(err) {
+                console.error(err);
+                return callback(err);
+            }
+
+            return callback(undefined, savedTodoList);
+        });
     };
 
     this.findAll = function FindAllTodoLists(callback) {
-        return callback(undefined, todoLists);
+        return todoListModel.find({}, callback);
     };
 
     this.findById = function FindTodoListsById(id, callback) {
-        for(var i = 0; i < todoLists.length; i++) {
-            var todoList = todoLists[i];
-            if(todoList.id === id) {
-                return callback(undefined, todoList);
-            }
-        }
-
-        return callback(undefined, undefined);
+        return todoListModel.findById(id, callback);
     };
 
     this.deleteById = function DeleteTodoListById(id, callback) {
-        if(todoLists.length == 0) {
-            return callback(new Error("Nothing to delete. Todo lists empty."));
-        }
-
-        for(var i = 0; i < todoLists.length; i++) {
-            var todoList = todoLists[i];
-            if(todoList.id === id) {
-                todoLists.splice(i, 1);
-                return callback(undefined, undefined);
+        return todoListModel.findById(id, function(err, foundTodoList) {
+            if(err) {
+                console.error(err);
+                return callback(err);
             }
-        }
 
-        return callback(new Error("Nothing to delete. ID not found"));
+            return foundTodoList.remove(function(err) {
+                return callback(err);
+            });
+        });
     };
 
     return this;

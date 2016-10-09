@@ -5,14 +5,24 @@ function App(config) {
     const logger = require('morgan');
     const cookieParser = require('cookie-parser');
     const bodyParser = require('body-parser');
-    const hat = require('hat');
+
+    const mongoose = require('mongoose');
+    mongoose.connect('mongodb://'+ config.db.host + '/todolistappdb', {db: { native_parser: true }, server: { poolSize: 20 }, user: config.db.user || undefined, password: config.db.password || undefined}, function(err) {
+        if(err) {
+            console.error(err);
+            return process.exit(1);
+        }
+
+        return console.info('Connected to MongoDB!');
+    });
 
     const stubTodoListModel = require('./models/StubTodoListModel');
+    const todoListModel = require('./models/TodoListModel')(mongoose);
 
-    const todoListService = require('./services/TodoListService')(hat);
+    const todoListService = require('./services/TodoListService')(todoListModel);
 
     const indexRoute = require('./routes/IndexRoute')(express);
-    const todoListRoute = require('./routes/TodoListRoute')(express, stubTodoListModel, todoListService);
+    const todoListRoute = require('./routes/TodoListRoute')(express, todoListService);
 
     const app = express();
 
