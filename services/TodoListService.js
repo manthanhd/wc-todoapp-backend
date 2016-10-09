@@ -25,6 +25,22 @@ function TodoListService(hat) {
         return callback(undefined, undefined);
     };
 
+    this.deleteById = function DeleteTodoListById(id, callback) {
+        if(todoLists.length == 0) {
+            return callback(new Error("Nothing to delete. Todo lists empty."));
+        }
+
+        for(var i = 0; i < todoLists.length; i++) {
+            var todoList = todoLists[i];
+            if(todoList.id === id) {
+                todoLists.splice(i, 1);
+                return callback(undefined, undefined);
+            }
+        }
+
+        return callback(new Error("Nothing to delete. ID not found"));
+    };
+
     return this;
 }
 

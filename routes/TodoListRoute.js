@@ -42,6 +42,18 @@ function TodoListRoute(express, stubTodoListModel, todoListService) {
         })
     });
 
+    router.delete('/id/:todoListId', function(req, res) {
+        var todoListId = req.params.todoListId;
+        return todoListService.deleteById(todoListId, function(err, todoList) {
+            if(err) {
+                console.error(err);
+                return res.status(500).send();
+            }
+
+            return res.status(204).send();
+        });
+    });
+
     return router;
 }
 
