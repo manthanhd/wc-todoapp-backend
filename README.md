@@ -27,7 +27,7 @@ Each session is uploaded to its own branch. In order to "checkout" the code, run
 git checkout <branch-name>
 ```
 
-For example, to checkout the first session, run:
+For example, to checkout the [first session](#first-session), run:
 ```sh
 git checkout session-1-project-setup
 ```
