@@ -32,7 +32,7 @@ For example, to checkout the first session, run:
 git checkout session-1-project-setup
 ```
 
-If for some reason the checkout fails, try [updating the repository (step 2)](#2.-update-the-repository), check for typos in branch name and/or try again.
+If for some reason the checkout fails, try [updating the repository (step 2)](#2-update-the-repository), check for typos in branch name and/or try again.
 
 Remember, you can always browse code on github.com using the **code link** under the session.
 
