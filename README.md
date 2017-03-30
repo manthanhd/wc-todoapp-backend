@@ -43,3 +43,8 @@ Video link: https://youtu.be/h_XLt-vckoM
 Code link: https://github.com/manthanhd/wc-todoapp-backend/tree/session-1-project-setup
 
 Branch name: session-1-project-setup
+
+### Version Control
+Video link: https://youtu.be/RyMm_fP8c8Y
+
+No significant code changes in this video
