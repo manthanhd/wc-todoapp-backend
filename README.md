@@ -56,3 +56,10 @@ Video link: https://youtu.be/EzOrsbnvngw
 Code link: https://github.com/manthanhd/wc-todoapp-backend/tree/session-3-add-lists
 
 Branch name: `session-3-add-lists`
+
+### Getting all added todo lists
+Video link: https://youtu.be/nNjJpV239fs
+
+Code link: https://github.com/manthanhd/wc-todoapp-backend/tree/session-4-get-todo-lists
+
+Branch name: `session-4-get-todo-lists`
