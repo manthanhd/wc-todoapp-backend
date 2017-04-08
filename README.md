@@ -1,11 +1,16 @@
 # wc-todoapp-backend
-Backend app as seen on my Youtube Writing Code series
+Backend app as seen on my [Youtube Writing Code](https://www.youtube.com/playlist?list=PLVBXNyNyLNq03GzbOsXE0okM01fwKEYYw) series
+
+## Session hot links
+* [Project Setup](#project-setup)
+* [Version Control](#version-control)
+* [Add a Todo List](#add-a-todo-list)
+* [Getting all added todo lists](#getting-all-added-todo-lists)
 
 ## Prerequisites
 You must have the following software installed before you can use this code:
-1. git
-2. node
-3. npm
+1. [git](https://git-scm.com/downloads)
+2. [node and npm](https://nodejs.org/en/download/)
 
 ## How to
 
