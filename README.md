@@ -6,6 +6,7 @@ Backend app as seen on my [Youtube Writing Code](https://www.youtube.com/playlis
 * [Version Control](#version-control)
 * [Add a Todo List](#add-a-todo-list)
 * [Getting all added todo lists](#getting-all-added-todo-lists)
+* [Getting a Todo List by its ID](#getting-a-todo-list-by-its-id)
 
 ## Prerequisites
 You must have the following software installed before you can use this code:
@@ -68,3 +69,11 @@ Video link: https://youtu.be/nNjJpV239fs
 Code link: https://github.com/manthanhd/wc-todoapp-backend/tree/session-4-get-todo-lists
 
 Branch name: `session-4-get-todo-lists`
+
+
+### Getting a Todo List by its ID
+Video link: https://youtu.be/uFLwseyMNao
+
+Code link: https://github.com/manthanhd/wc-todoapp-backend/tree/session-5-get-todo-list-by-id
+
+Branch name: `session-5-get-todo-list-by-id`
