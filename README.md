@@ -7,6 +7,7 @@ Backend app as seen on my [Youtube Writing Code](https://www.youtube.com/playlis
 * [Add a Todo List](#add-a-todo-list)
 * [Getting all added todo lists](#getting-all-added-todo-lists)
 * [Getting a Todo List by its ID](#getting-a-todo-list-by-its-id)
+* [Deleting a Todo List by ID](#deleting-a-todo-list-by-id)
 
 ## Prerequisites
 You must have the following software installed before you can use this code:
@@ -77,3 +78,11 @@ Video link: https://youtu.be/uFLwseyMNao
 Code link: https://github.com/manthanhd/wc-todoapp-backend/tree/session-5-get-todo-list-by-id
 
 Branch name: `session-5-get-todo-list-by-id`
+
+
+### Deleting a Todo List by ID
+Video link: https://youtu.be/E22QensdrdI
+
+Code link: https://github.com/manthanhd/wc-todoapp-backend/tree/session-6-delete-todo-list-by-id
+
+Branch name: `session-6-delete-todo-list-by-id`
